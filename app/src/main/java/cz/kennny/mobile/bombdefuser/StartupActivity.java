@@ -67,6 +67,7 @@ public class StartupActivity extends AppCompatActivity
         intent.putExtra("timesectext", et.getText().toString());
         et = (EditText)findViewById(R.id.finishText);
         intent.putExtra("finishtext", et.getText().toString());
+        et.setText("");
         et = (EditText)findViewById(R.id.penaltyField);
         intent.putExtra("penaltysecs", et.getText().toString());
 

@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -93,6 +94,16 @@ public class DefuseActivity extends AppCompatActivity
 
     /** runnable for countdown */
     Runnable countdownRunnable = null;
+
+    @Override
+    protected void onStop()
+    {
+        super.onStop();
+
+        Log.i("Defuser", "Countdown stopped");
+        if (handler != null)
+            handler.removeCallbacks(countdownRunnable);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
